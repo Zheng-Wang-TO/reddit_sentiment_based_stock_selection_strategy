@@ -1,0 +1,22 @@
+# Python
+__pycache__
+.py[cod]
+.egg-info
+dist
+build
+
+# Virtual Environments
+.env
+.venv
+env
+venv
+
+# IDE and OS files
+.idea
+.vscode
+.DS_Store
+
+# Output data from the scrapers
+# This ensures you don't commit large data files to the repo
+reddit_weekly_data
+historical_sp500_by_week.csv
