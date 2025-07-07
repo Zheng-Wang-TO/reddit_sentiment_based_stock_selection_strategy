@@ -18,7 +18,7 @@ import matplotlib.style as style
 from pathlib import Path
 
 # === Configuration ===
-# ❗ IMPORTANT: Update this with the path to your detailed weekly data file.
+# IMPORTANT: Update this with the path to your detailed weekly data file.
 # This file should be inside the 'reddit_weekly_data' folder.
 SELECTIONS_CSV_PATH = "reddit_weekly_data/weekly_top5_tickers_detailed_20250626_0458.csv" # <-- UPDATE THIS FILENAME
 
@@ -76,12 +76,12 @@ def calculate_metrics(returns_df, risk_free_rate=0.0):
 
 def run_backtest():
     """Main function to run the backtest and generate the analysis."""
-    print("🚀 Starting Backtest and Performance Analysis...")
+    print("Starting Backtest and Performance Analysis...")
     
     # --- 1. Load Data ---
     selections_path = Path(SELECTIONS_CSV_PATH)
     if not selections_path.exists():
-        print(f"❌ ERROR: File not found at '{SELECTIONS_CSV_PATH}'.")
+        print(f"ERROR: File not found at '{SELECTIONS_CSV_PATH}'.")
         print("Please update the 'SELECTIONS_CSV_PATH' variable with the correct filename.")
         return
 
@@ -133,7 +133,7 @@ def run_backtest():
 
     portfolio_returns = pd.Series(portfolio_weekly_returns, index=pd.to_datetime(processed_weeks)).rename("Portfolio")
     
-    print("✅ Trading simulation complete.")
+    print("Trading simulation complete.")
 
     # --- 3. Fetch Benchmark Data ---
     start_date = portfolio_returns.index.min()
@@ -145,7 +145,7 @@ def run_backtest():
     # Align data
     analysis_df = pd.concat([portfolio_returns, benchmark_returns], axis=1).dropna()
     
-    print("✅ Benchmark data fetched and aligned.")
+    print("Benchmark data fetched and aligned.")
     
     # --- 4. Calculate Performance Metrics ---
     portfolio_metrics = calculate_metrics(analysis_df['Portfolio'])
@@ -156,7 +156,7 @@ def run_backtest():
     win_rate_spy = (analysis_df['Portfolio'] > analysis_df['SPY']).mean()
     win_rate_qqq = (analysis_df['Portfolio'] > analysis_df['QQQ']).mean()
     
-    print("✅ Performance metrics calculated.")
+    print("Performance metrics calculated.")
 
     # --- 5. Display Results ---
     print("\n" + "="*50)
