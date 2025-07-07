@@ -132,5 +132,4 @@ Win Rate vs SPY      57.90%    ---    ---
 Win Rate vs QQQ      53.60%    ---    ---
 
 
-![Example Growth Chart](https://i.imgur.com/your-chart-image.png)
-*(This is a placeholder. You should run the analysis and upload your own chart image here.)*
+![Example Growth Chart](https://github.com/Zheng-Wang-TO/reddit_sentiment_based_stock_selection_strategy/blob/main/performance_chart.png)
